@@ -22,7 +22,8 @@ public class WomenHoodiesPage {
         driver.findElement(hoodieLocator).click();
     }
 
-    public void clickElements(){
+    public void clickElements() throws InterruptedException {
+        Thread.sleep(2000);
         driver.findElement(clothesSize).click();
         driver.findElement(color).click();
         typeQuantity("2");

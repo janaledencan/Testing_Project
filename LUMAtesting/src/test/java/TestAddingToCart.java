@@ -17,7 +17,8 @@ public class TestAddingToCart {
 
     @BeforeMethod
     public void setupTest() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jana\\Drivers\\chromedriver.exe");
+        String chromeDriverPath = System.getenv("ChromeDriverTest");
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         driver = new ChromeDriver();
         driver.navigate().to(testURL);
     }

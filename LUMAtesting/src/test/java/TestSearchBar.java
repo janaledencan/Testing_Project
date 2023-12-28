@@ -12,7 +12,7 @@ public class TestSearchBar {
 
     @BeforeMethod
     public void setupTest() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Jana\\Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getenv("ChromeDriverTest"));
         driver = new ChromeDriver();
         driver.navigate().to(testURL);
     }
