@@ -1,6 +1,8 @@
 package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 
 public class HomePage {
@@ -8,12 +10,14 @@ public class HomePage {
 
     private By messageBy = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
 
-    public HomePage(WebDriver driver) throws InterruptedException {
+    public HomePage(WebDriver driver, Boolean loggedIn) throws InterruptedException {
         this.driver = driver;
-        Thread.sleep(5000);
-        if (!getMessageText().equals("Welcome, test tester!")) {
-            throw new IllegalStateException("This is not Home Page of logged in user," +
-                    " current page is: " + driver.getCurrentUrl());
+        if(loggedIn){
+            Thread.sleep(5000);
+            if (!getMessageText().equals("Welcome, test tester!")) {
+                throw new IllegalStateException("This is not Home Page of logged in user," +
+                        " current page is: " + driver.getCurrentUrl());
+            }
         }
     }
 
@@ -21,8 +25,14 @@ public class HomePage {
         return driver.findElement(messageBy).getText();
     }
 
-    public HomePage manageProfile() throws InterruptedException {
-        return new HomePage(driver);
+    public void hoverElement(WebElement element){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).build().perform();
+    }
+
+    public void clickElement(WebElement element){
+        Actions actions = new Actions(driver);
+        actions.click(element).build().perform();
     }
 
 }

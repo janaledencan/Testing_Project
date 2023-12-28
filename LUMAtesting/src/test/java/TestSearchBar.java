@@ -1,11 +1,8 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.HomePage;
-import pages.Login;
 import pages.SearchBar;
 
 public class TestSearchBar {
@@ -28,7 +25,7 @@ public class TestSearchBar {
         searchBar.Search("pants");
     }
 
-    
+
     @AfterMethod
     public void teardownTest() {
         driver.quit();

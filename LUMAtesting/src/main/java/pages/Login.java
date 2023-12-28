@@ -36,7 +36,7 @@ public class Login {
 
     public HomePage submitLogin() throws InterruptedException {
         driver.findElement(loginButtonLocator).submit();
-        return new HomePage(driver);
+        return new HomePage(driver, true);
     }
 
 
