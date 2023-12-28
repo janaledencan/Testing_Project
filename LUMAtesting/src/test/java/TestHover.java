@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.Login;
 
+import java.time.Duration;
+
 public class TestHover {
 
     public WebDriver driver;
@@ -24,7 +26,7 @@ public class TestHover {
     @Test
     public void testHoverElement() throws InterruptedException {
         HomePage page = new HomePage(driver,false);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement mainElement = driver.findElement(By.xpath("//*[@id=\"ui-id-4\"]"));  //Women
         WebElement subElement = driver.findElement(By.xpath("//*[@id=\"ui-id-9\"]"));  //Tops
         WebElement hoodies =  driver.findElement(By.xpath("//*[@id=\"ui-id-12\"]/span"));

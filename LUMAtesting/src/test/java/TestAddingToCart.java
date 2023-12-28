@@ -10,6 +10,8 @@ import pages.HomePage;
 import pages.Login;
 import pages.WomenHoodiesPage;
 
+import java.time.Duration;
+
 public class TestAddingToCart {
 
     public WebDriver driver;
@@ -27,7 +29,7 @@ public class TestAddingToCart {
     public void testAddToCart() throws InterruptedException {
         driver.manage().window().maximize();
         WomenHoodiesPage hoodiesPage = new WomenHoodiesPage(driver);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         hoodiesPage.getToItemPage();
         hoodiesPage.clickElements();
     }

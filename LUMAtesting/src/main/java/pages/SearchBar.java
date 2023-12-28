@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class SearchBar {
 
     WebDriver driver;
@@ -17,9 +19,7 @@ public class SearchBar {
         driver.findElement(searchInput).sendKeys(searchTxt);
         driver.findElement(searchInput).submit();
 
-        try{Thread.sleep(2000);}catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
     }
 
 }

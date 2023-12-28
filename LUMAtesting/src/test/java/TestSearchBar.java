@@ -21,7 +21,6 @@ public class TestSearchBar {
     @Test
     public void search() throws InterruptedException {
         SearchBar searchBar = new SearchBar(driver);
-        //Thread.sleep(5000);
         searchBar.Search("pants");
     }
 

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.time.Duration;
+
 
 public class HomePage {
     protected WebDriver driver;
@@ -13,7 +15,7 @@ public class HomePage {
     public HomePage(WebDriver driver, Boolean loggedIn) throws InterruptedException {
         this.driver = driver;
         if(loggedIn){
-            Thread.sleep(5000);
+            Thread.sleep(2500);
             if (!getMessageText().equals("Welcome, test tester!")) {
                 throw new IllegalStateException("This is not Home Page of logged in user," +
                         " current page is: " + driver.getCurrentUrl());

@@ -2,6 +2,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class Login {
     private final WebDriver driver;
     public Login(WebDriver driver){
@@ -36,6 +38,7 @@ public class Login {
 
     public HomePage submitLogin() throws InterruptedException {
         driver.findElement(loginButtonLocator).submit();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
         return new HomePage(driver, true);
     }
 

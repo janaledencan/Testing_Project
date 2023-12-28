@@ -9,6 +9,8 @@ import pages.Login;
 import pages.WishItems;
 import pages.WomenHoodiesPage;
 
+import java.time.Duration;
+
 public class TestAddingToWishList {
     public WebDriver driver;
     public String testURL = "https://magento.softwaretestingboard.com/";
@@ -32,7 +34,7 @@ public class TestAddingToWishList {
         driver.navigate().to(testURLmenTshirt);
 
         WishItems wishPage = new WishItems(driver);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wishPage.addToWishListWithHeart();
 
     }
@@ -47,7 +49,7 @@ public class TestAddingToWishList {
         driver.navigate().to(testURLmenTshirt);
 
         WishItems wishPage = new WishItems(driver);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wishPage.addToWishListWithLink();
     }
 

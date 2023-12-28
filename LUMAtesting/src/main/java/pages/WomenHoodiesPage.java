@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.time.Duration;
+
 public class WomenHoodiesPage {
 
     protected WebDriver driver;
@@ -23,7 +25,7 @@ public class WomenHoodiesPage {
     }
 
     public void clickElements() throws InterruptedException {
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.findElement(clothesSize).click();
         driver.findElement(color).click();
         typeQuantity("2");

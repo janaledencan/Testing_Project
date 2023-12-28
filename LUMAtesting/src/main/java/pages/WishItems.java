@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.time.Duration;
+
 public class WishItems {
 
     protected WebDriver driver;
@@ -20,14 +22,14 @@ public class WishItems {
     }
 
     public void addToWishListWithHeart(){
-
         hoverElement(driver.findElement(tshirtCardLocator));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.findElement(btnHeartLocator).click();
     }
 
     public void addToWishListWithLink(){
-
        getToItemPage();
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
        driver.findElement(wishListLinkLocator).click();
     }
 

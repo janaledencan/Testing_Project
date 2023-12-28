@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.Login;
 
+import java.time.Duration;
+
 
 public class TestLogin {
 
@@ -23,8 +25,9 @@ public class TestLogin {
     @Test
     public void testLogin() throws InterruptedException {
         Login signInPage = new Login(driver);
-        //Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         HomePage homePage = signInPage.loginAs("najjaciTester@mail.com", "Test123!+");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Assert.assertEquals(homePage.getMessageText(),"Welcome, test tester!");
     }
 
