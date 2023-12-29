@@ -1,16 +1,15 @@
 package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import java.time.Duration;
 
 public class Login {
     private final WebDriver driver;
+
     public Login(WebDriver driver){
         this.driver = driver;
         getToLoginPage();
 
-        // Check that we're on the right page.
         if (!"Customer Login".equals(driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[1]/h1/span")).getText())) {
             throw new IllegalStateException("This is not the login page");
         }
@@ -38,19 +37,15 @@ public class Login {
 
     public HomePage submitLogin() throws InterruptedException {
         driver.findElement(loginButtonLocator).submit();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return new HomePage(driver, true);
     }
 
 
-    public Login submitLoginExpectingFailure() {
-        driver.findElement(loginButtonLocator).submit();
-        return new Login(driver);
-    }
-
     public HomePage loginAs(String email, String password) throws InterruptedException {
         typeEmail(email);
         typePassword(password);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return submitLogin();
     }
 }

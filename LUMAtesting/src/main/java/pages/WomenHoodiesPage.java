@@ -1,10 +1,6 @@
 package pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-
 import java.time.Duration;
 
 public class WomenHoodiesPage {
@@ -24,7 +20,7 @@ public class WomenHoodiesPage {
         driver.findElement(hoodieLocator).click();
     }
 
-    public void clickElements() throws InterruptedException {
+    public void clickElements(){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.findElement(clothesSize).click();
         driver.findElement(color).click();
