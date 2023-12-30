@@ -10,7 +10,7 @@ public class SearchBar {
         this.driver = driver;
     }
 
-    By searchInput = By.name("q");
+    By searchInput = By.id("search");
 
     public void Search(String searchTxt){
         driver.findElement(searchInput).clear();

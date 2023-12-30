@@ -11,10 +11,10 @@ public class WomenHoodiesPage {
         this.driver = driver;
     }
     By hoodieLocator = By.xpath("//*[@id=\"maincontent\"]/div[3]/div[1]/div[4]/ol/li[1]/div/div/strong/a" );
-    By quantityLocator = By.name("qty");
-    By clothesSize = By.xpath("//*[@id=\"option-label-size-143-item-168\"]");
-    By color =By.xpath("//*[@id=\"option-label-color-93-item-57\"]");
-    By btnAddToCart = By.xpath("//*[@id=\"product-addtocart-button\"]");
+    By quantityLocator = By.id("qty");
+    By clothesSize = By.id("option-label-size-143-item-168");
+    By color = By.id("option-label-color-93-item-53"); //By.xpath("//*[@id=\"option-label-color-93-item-57\"]");
+    By btnAddToCart = By.id("product-addtocart-button");
 
     public void getToItemPage(){
         driver.findElement(hoodieLocator).click();

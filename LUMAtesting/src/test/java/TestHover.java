@@ -29,8 +29,8 @@ public class TestHover {
     public void testHoverElement() throws InterruptedException {
         HomePage page = new HomePage(driver,false);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        WebElement mainElement = driver.findElement(By.xpath("//*[@id=\"ui-id-4\"]"));  //Women
-        WebElement subElement = driver.findElement(By.xpath("//*[@id=\"ui-id-9\"]"));  //Tops
+        WebElement mainElement = driver.findElement(By.id("ui-id-4"));  //(By.xpath("//*[@id=\"ui-id-4\"]"));  //Women
+        WebElement subElement = driver.findElement(By.id("ui-id-9")); //(By.xpath("//*[@id=\"ui-id-9\"]"));  //Tops
         WebElement hoodies =  driver.findElement(By.xpath("//*[@id=\"ui-id-12\"]/span"));
 
         page.hoverElement(mainElement);

@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 public class HomePage {
 
     protected WebDriver driver;
-    private By messageBy = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
+    private By messageBy = By.className("logged-in"); //By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[1]/span");
 
 
     public HomePage(WebDriver driver, Boolean loggedIn) throws InterruptedException {

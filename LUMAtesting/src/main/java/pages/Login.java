@@ -16,9 +16,9 @@ public class Login {
     }
 
     By signInLocator = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a");
-    By emailLocator = By.name("login[username]");
-    By passwordLocator = By.name("login[password]");
-    By loginButtonLocator = By.name("send");
+    By emailLocator = By.id("email");
+    By passwordLocator = By.id("pass");
+    By loginButtonLocator = By.id("send2");
 
     public void getToLoginPage(){
        driver.findElement(signInLocator).click();
